@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -20,5 +22,12 @@ public class ExpressionController {
     public String getMember(Model model) {
         model.addAttribute("member", members.get(0));
         return "expression/object";
+    }
+
+    @GetMapping("/calendars")
+    public String getCalendars(Model model) {
+        Date date = Calendar.getInstance().getTime();
+        model.addAttribute("date", date);
+        return "expression/calendar";
     }
 }

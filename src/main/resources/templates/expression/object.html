@@ -8,5 +8,11 @@
 <li th:text="${member.name}">name</li>
 <li th:text="${member.email}">phone</li>
 <li th:text="${member.age}">address</li>
+
+<ul th:object="${member}">
+    <li th:text="*{name}">name</li>
+    <li th:text="*{email}">email</li>
+    <li th:text="*{age}">age</li>
+</ul>
 </body>
 </html>
